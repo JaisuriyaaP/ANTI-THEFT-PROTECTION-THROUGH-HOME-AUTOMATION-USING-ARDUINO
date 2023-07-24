@@ -1,0 +1,24 @@
+#define BLYNK_TEMPLATE_ID "TMPL_5fSDjN-"
+#define BLYNK_DEVICE_NAME "home automation pro"
+#define BLYNK_AUTH_TOKEN "zvdEa3Z1IHOdnU__jNlpAXQx9vzUWDfL"
+#define BLYNK_PRINT Serial
+#include <ESP8266WiFi.h> 
+#include <BlynkSimpleEsp8266.h>
+char auth[] = BLYNK_AUTH_TOKEN;
+char ssid[] = "Airtel-MyWiFi-AMF-311WW-5629"; // Enter your Wifi Username
+char pass[] = "27d8a968"; // Enter your Wifi password
+int ledpin1 = D4;
+int ledpin2 = D6;
+int ledpin3 = D7;
+void setup()
+{ 
+ Serial.begin(115200);
+ Blynk.begin(auth, ssid, pass); 
+ pinMode(ledpin1,OUTPUT);
+ pinMode(ledpin2,OUTPUT);
+ pinMode(ledpin3,OUTPUT);
+}
+void loop()
+{
+ Blynk.run(); 
+}
